@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Spam Emails</title>
+    <link rel="stylesheet" href="{% static 'src/index.css' %}">
+</head>
+<body>
+    <div class='parent'>
+        <h1>Spam Detector</h1>
+        <form action="" method="post" class='form-container'>
+            {% csrf_token %}
+            <div class="input-container">
+                <textarea name='mail' class="full-text-area" placeholder="Enter the email body" required></textarea>
+            </div>
+            <button class='submit-btn' type="submit">Check</button>
+            {% if prediction %}
+                <div class="{% if prediction == 'Not Spam' %}not-spam{% else %}spam{% endif %} test-div">
+                    <strong>Prediction: </strong>{{ prediction }}
+                </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
