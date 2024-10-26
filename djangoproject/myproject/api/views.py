@@ -3,10 +3,11 @@ import pickle
 from django.shortcuts import render
 from django.http import HttpResponse
 import nltk;
+nltk.download("stopwords")
+nltk.download("wordnet")
 import sklearn;
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 with open('api/models/vectorizer.pkl', 'rb') as vec_file:
