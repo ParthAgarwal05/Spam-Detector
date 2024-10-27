@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0j_e7#go%yk)3g$bb(__wjx_q3@!(huk_a3ypm(_3n!cg%dhx+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["spam-detector-15wo.onrender.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition

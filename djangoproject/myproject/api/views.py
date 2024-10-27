@@ -32,7 +32,7 @@ def main(request):
 
 def predict(mail):
     mail_processed = preprocess_text(mail)
-    mail_vectorized = vectorizer.transform([mail_processed])  # Note the list input
+    mail_vectorized = vectorizer.transform([mail_processed])  
     prediction = model.predict(mail_vectorized)
     if prediction[0] == 0:
         return "Not Spam"
